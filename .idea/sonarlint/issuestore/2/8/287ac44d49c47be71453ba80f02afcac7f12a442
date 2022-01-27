@@ -1,0 +1,10 @@
+
+w
+java:S1201"UEither override Object.equals(Object), or rename the method to prevent any confusion.(Ÿ‹ƒµşÿÿÿÿ8Î˜´£Ñ/
+Q
+java:S1128"/Remove this unused import 'Model.Type.IntType'.(ÈÕîğúÿÿÿÿ8æÕŒùÓ/
+I
+java:S1128",Remove this unused import 'Model.Type.Type'.(µÚ´»8æÕŒùÓ/
+K
+java:S1066"/Merge this if statement with the enclosing one.(ñê}8ü“É¤Ñ/
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ûŞ«

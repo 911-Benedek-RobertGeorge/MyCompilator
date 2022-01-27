@@ -1,0 +1,14 @@
+
+`	java:S112>"FDefine and throw a dedicated exception instead of using a generic one.(óæªÛùÿÿÿÿ
+[	java:S112G"FDefine and throw a dedicated exception instead of using a generic one.(Î­öÁ
+Œ
+java:S1130>"qRemove the declaration of thrown exception 'java.lang.Exception', as it cannot be thrown from constructor's body.(óæªÛùÿÿÿÿ
+Ž
+java:S1130G"qRemove the declaration of thrown exception 'java.lang.Exception', as it cannot be thrown from constructor's body.(Î­öÁ8ÌžªÎÙ/
+V
+java:S1126d"AReplace this if-then-else statement by a single return statement.(Ì¼ž
+o
+java:S2293B"YReplace the type specification in this constructor call with the diamond operator ("<>").(¶Ìºý
+t
+java:S2293C"YReplace the type specification in this constructor call with the diamond operator ("<>").(Ð›íãøÿÿÿÿ
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ùëûªøÿÿÿÿ

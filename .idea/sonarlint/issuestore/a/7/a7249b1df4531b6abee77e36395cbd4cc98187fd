@@ -1,0 +1,7 @@
+
+N	java:S106"9Replace this use of System.out or System.err by a logger.(Ìó§œ
+[
+java:S6201("EReplace this instanceof check and cast with 'instanceof RefType reft'(ýƒâ¥
+]
+java:S1128"@Remove this unused import 'Model.Exceptions.ExecutionException'.(¾õ˜§8Ø’ïŸÙ/
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ôÏ¦¬

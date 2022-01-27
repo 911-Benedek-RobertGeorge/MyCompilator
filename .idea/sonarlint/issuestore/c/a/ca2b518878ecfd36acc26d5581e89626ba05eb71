@@ -1,0 +1,9 @@
+
+[	java:S112/"FDefine and throw a dedicated exception instead of using a generic one.(›†ÔÄ
+J
+java:S3740"/Provide the parametrized type for this generic.(„Õ¨êşÿÿÿÿ
+B
+java:S1125!"'Remove the unnecessary boolean literal.(©À×±øÿÿÿÿ
+E
+java:S5411!"*Use the primitive boolean expression here.(©À×±øÿÿÿÿ
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(È’¨øÿÿÿÿ

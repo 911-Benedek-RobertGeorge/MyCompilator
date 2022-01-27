@@ -1,0 +1,6 @@
+
+m
+java:S1206"PThis class overrides "equals()" and should therefore also override "hashCode()".(¬‰¼¯8š“¾Ò/
+j
+java:S6201"HReplace this instanceof check and cast with 'instanceof RefType reftype'(˜Ú§œøÿÿÿÿ8¼Å˜¾Ò/
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(é·úÿÿÿÿÿ

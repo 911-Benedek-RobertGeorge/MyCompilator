@@ -1,0 +1,10 @@
+
+J
+java:S3740,"/Provide the parametrized type for this generic.(ÕÇ‘Äþÿÿÿÿ
+c	java:S119"IRename this generic name to match the regular expression '^[A-Z][0-9]?$'.(Šïì¡úÿÿÿÿ
+c	java:S119"IRename this generic name to match the regular expression '^[A-Z][0-9]?$'.(Šïì¡úÿÿÿÿ
+V
+java:S2864-"4Iterate over the "entrySet" instead of the "keySet".(«üÃïùÿÿÿÿ8ìÅ„¶Ö/
+o
+java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(’™Ð—
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Ÿ×ŒÚ

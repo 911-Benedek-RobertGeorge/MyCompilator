@@ -1,0 +1,10 @@
+
+J
+java:S3740"/Provide the parametrized type for this generic.(¼©ëÁûÿÿÿÿ
+h
+java:S3776"RRefactor this method to reduce its Cognitive Complexity from 20 to the 15 allowed.(áñ±¿
+Q
+java:S1128	"/Remove this unused import 'Model.Type.RefType'.(ÖÄÒ‹ùÿÿÿÿ8¯†®¦Ù/
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(È’¨øÿÿÿÿ
+a
+java:S2259>"FA "NullPointerException" could be thrown; "variable" is nullable here.(“Ñç–ÿÿÿÿÿ

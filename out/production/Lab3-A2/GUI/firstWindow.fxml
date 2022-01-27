@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<StackPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.FirstWindowController">
+    <children>
+        <VBox alignment="TOP_CENTER" style="-fx-background-color: #B2ACAB; -fx-border-color: #83878D;" >
+            <children>
+                <ListView fx:id="commandListView"  prefHeight="532.0" prefWidth="3003.0" style="-fx-background-color: #B2ACAB; -fx-border-color: #83878D; -fx-fixed-cell-size: 40;">
+                    <VBox.margin>
+                        <Insets />
+                    </VBox.margin>
+                    <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                    </padding></ListView>
+                <Label fx:id="label" textFill="#7b3b3b">
+                    <font>
+                        <Font name="Corbel Bold Italic" size="13.0" />
+                    </font></Label>
+            </children>
+        </VBox>
+    </children>
+</StackPane>

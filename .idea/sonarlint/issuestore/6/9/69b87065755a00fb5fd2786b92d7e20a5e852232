@@ -1,0 +1,6 @@
+
+k
+java:S1201	"UEither override Object.equals(Object), or rename the method to prevent any confusion.(’”ş¸
+Q
+java:S1128"/Remove this unused import 'Model.Type.IntType'.(ÈÕîğúÿÿÿÿ8Ù†¤¾Ò/
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ûŞ«

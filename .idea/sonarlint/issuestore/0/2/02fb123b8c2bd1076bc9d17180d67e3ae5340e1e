@@ -1,0 +1,6 @@
+
+f
+java:S1206"PThis class overrides "equals()" and should therefore also override "hashCode()".(¬‰¼¯
+^
+java:S1126	"AReplace this if-then-else statement by a single return statement.(ÏÅ«Ñ8½îù˜É/
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(é·úžÿÿÿÿÿ

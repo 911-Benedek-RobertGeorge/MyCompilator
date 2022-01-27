@@ -1,0 +1,19 @@
+
+J
+java:S3740A"/Provide the parametrized type for this generic.(ı¸˜Õşÿÿÿÿ
+^	java:S119	"IRename this generic name to match the regular expression '^[A-Z][0-9]?$'.(Â¦å
+^	java:S119	"IRename this generic name to match the regular expression '^[A-Z][0-9]?$'.(Â¦å
+W
+java:S1126)"AReplace this if-then-else statement by a single return statement.(™ó¥£
+O
+java:S18545"9Remove this useless assignment to local variable "value".(å¥Êæ
+U
+java:S62131":Rename this variable to not match a restricted identifier.(ËŒàûÿÿÿÿ
+@
+java:S14815"*Remove this unused "value" local variable.(å¥Êæ
+P	java:S1257"<This block of commented-out lines of code should be removed.(š¨å
+J
+java:S2864B"4Iterate over the "entrySet" instead of the "keySet".(‰ÂŠß
+o
+java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(÷”µ¨
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ÉŒü¶

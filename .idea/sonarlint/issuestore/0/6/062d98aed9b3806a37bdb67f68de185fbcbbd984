@@ -1,0 +1,9 @@
+
+[	java:S112Q"FDefine and throw a dedicated exception instead of using a generic one.(…²¨«
+;
+java:S16590" Declare "v2" on a separate line.(áô»Èüÿÿÿÿ
+6
+java:S16597" Declare "n2" on a separate line.(òÿ³Û
+=
+java:S1659R""Declare "typ2" on a separate line.(ÐÃŽ˜ÿÿÿÿÿ
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ôÏ¦¬

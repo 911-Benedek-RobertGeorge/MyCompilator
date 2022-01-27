@@ -1,0 +1,20 @@
+
+>
+java:S1659"(Declare "expresion2" on a separate line.(±Í¨“
+W
+java:S4973"<Strings and Boxed types should be compared using "equals()".(‰×¬ þÿÿÿÿ
+W
+java:S4973""<Strings and Boxed types should be compared using "equals()".(Ö¹œ§üÿÿÿÿ
+W
+java:S4973&"<Strings and Boxed types should be compared using "equals()".(©‚¬ÿÿÿÿÿ
+R
+java:S4973("<Strings and Boxed types should be compared using "equals()".(“ëà¾
+R
+java:S4973*"<Strings and Boxed types should be compared using "equals()".(‘íó
+W
+java:S4973,"<Strings and Boxed types should be compared using "equals()".(ÝÎù¼ùÿÿÿÿ
+W
+java:S4973."<Strings and Boxed types should be compared using "equals()".(ÈóžÒþÿÿÿÿ
+W
+java:S49732"<Strings and Boxed types should be compared using "equals()".(ÈÓÙÐùÿÿÿÿ
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ôÏ¦¬

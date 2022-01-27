@@ -1,0 +1,12 @@
+
+^	java:S119
+"IRename this generic name to match the regular expression '^[A-Z][0-9]?$'.(ğ¡¼ä
+^	java:S119
+"IRename this generic name to match the regular expression '^[A-Z][0-9]?$'.(ğ¡¼ä
+[
+java:S1128">Remove this unused import 'Model.Containers.ExeStack.MyStack'.(¯îº8§âÿµÖ/
+`
+java:S1128"CRemove this unused import 'Model.Containers.SymTable.MyDictionary'.(ñ¨Š¥8¨âÿµÖ/
+`
+java:S1128"DRemove this unused import 'Model.Containers.SymTable.MyIDictionary'.(Î´,8ı€¶Ö/
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Ÿ×ŒÚ

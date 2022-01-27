@@ -1,0 +1,35 @@
+
+E
+java:S3740"/Provide the parametrized type for this generic.(áæÅÄ
+E
+java:S3740!"/Provide the parametrized type for this generic.(ñƒ¯Ñ
+J
+java:S3740""/Provide the parametrized type for this generic.(ÿëÕûÿÿÿÿ
+E
+java:S3740#"/Provide the parametrized type for this generic.(”íÙ
+E
+java:S3740$"/Provide the parametrized type for this generic.(£““Ñ
+Y
+java:S1128"<Remove this unused import 'Model.Containers.OutList.MyList'.(™­ü˜8éÖ± Ù/
+`
+java:S1128"CRemove this unused import 'Model.Containers.SymTable.MyDictionary'.(ñ¨Š¥8êÖ± Ù/
+]
+java:S1128
+"@Remove this unused import 'Model.Exceptions.TypeCheckException'.(¹¥èÛ8êÖ± Ù/
+Q
+java:S1128"/Remove this unused import 'Model.Exp.ValueExp'.(ÆŠÕ·üÿÿÿÿ8êÖ± Ù/
+J
+java:S1128"-Remove this unused import 'Model.Exp.VarExp'.(œò¢î8êÖ± Ù/
+M
+java:S1128"0Remove this unused import 'Model.Type.BoolType'.(è¾ãå8êÖ± Ù/
+Q
+java:S1128"/Remove this unused import 'Model.Type.IntType'.(ÈÕîğúÿÿÿÿ8êÖ± Ù/
+O
+java:S1128"2Remove this unused import 'Model.Value.BoolValue'.(ôÚ¾Ğ8êÖ± Ù/
+N
+java:S1128"1Remove this unused import 'Model.Value.IntValue'.(¨½æš8êÖ± Ù/
+P
+java:S1128".Remove this unused import 'Model.Value.Value'.(Î¤¤Õÿÿÿÿÿ8ëÖ± Ù/
+x
+java:S1488("bImmediately return this expression instead of assigning it to the temporary variable "newProgram".(üëà—
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(È’¨øÿÿÿÿ

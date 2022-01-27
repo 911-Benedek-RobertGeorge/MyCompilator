@@ -1,0 +1,45 @@
+
+h
+java:S6204#"RReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()'(ª™¨¹
+i
+java:S1602""SRemove useless curly braces around statement and then remove useless return keyword(Èì–
+M
+java:S1612""7Replace this lambda with method reference 'p::oneStep'.(Èì–
+h
+java:S6204/"RReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()'(ª™¨¹
+t
+java:S2142*"^Either re-interrupt this method or rethrow the "InterruptedException" that can be caught here.(”ı¾
+X
+java:S1612."=Replace this lambda with method reference 'Objects::nonNull'.(³¬Ÿşÿÿÿÿ
+]	java:S125="<This block of commented-out lines of code should be removed.( õôÊùÿÿÿÿ8ôÈƒÏÙ/
+M
+java:S1135>"2Complete the task associated to this TODO comment.(şàÛıÿÿÿÿ
+H
+java:S1135?"2Complete the task associated to this TODO comment.(Â±ùà
+X	java:S125O"<This block of commented-out lines of code should be removed.(“ü¿ü8ôìÏÙ/
+T
+java:S1135N"2Complete the task associated to this TODO comment.(şàÛıÿÿÿÿ8™¬ƒÏÙ/
+O
+java:S1135O"2Complete the task associated to this TODO comment.(“ü¿ü8š¬ƒÏÙ/
+]	java:S125Z"<This block of commented-out lines of code should be removed.(éØ»Úûÿÿÿÿ8öìÏÙ/
+h
+java:S6204u"RReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()'(†öúš
+b
+java:S1612n"GReplace this lambda with method reference 'RefValue.class::isInstance'.(Í©•™ÿÿÿÿÿ
+b
+java:S1612r"GReplace this lambda with method reference 'RefValue.class::isInstance'.(Í©•™ÿÿÿÿÿ
+h
+java:S6204}"RReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()'(ª™¨¹
+[
+java:S1612|"EReplace this lambda with method reference 'PrgState::isNotCompleted'.(æ Ç‘
+a
+java:S1128"?Remove this unused import 'Model.Containers.ExeStack.MyIStack'.(¹É¸«ıÿÿÿÿ8Œ²ÏÙ/
+c
+java:S1128"ARemove this unused import 'Model.Exceptions.ContainersException'.(Ğ÷ÿØúÿÿÿÿ8Œ²ÏÙ/
+O
+java:S1128"2Remove this unused import 'Model.Statement.IStmt'.(¦¬ù8Œ²ÏÙ/
+a
+java:S1128"DRemove this unused import 'java.util.concurrent.ExecutionException'.(¡£ØÍ8Œ²ÏÙ/
+`
+java:S1155M">Use isEmpty() to check whether the collection is empty or not.(Š¦î¼ûÿÿÿÿ8šíÏÙ/
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(º›°Î

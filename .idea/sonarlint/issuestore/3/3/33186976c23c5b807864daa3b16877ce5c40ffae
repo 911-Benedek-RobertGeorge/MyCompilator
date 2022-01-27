@@ -1,0 +1,7 @@
+
+b	java:S112+"FDefine and throw a dedicated exception instead of using a generic one.(Õƒ‡8¬Ú Ù/
+J
+java:S3740"/Provide the parametrized type for this generic.(¼©ëÁûÿÿÿÿ
+E
+java:S3740"/Provide the parametrized type for this generic.(òË¸€
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(È’¨øÿÿÿÿ

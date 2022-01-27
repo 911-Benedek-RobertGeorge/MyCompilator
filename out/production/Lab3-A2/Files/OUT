@@ -1,0 +1,120 @@
+Id : 5
+ExeStack : 
+[int a, (int b;(a=5;(b=8;(IF(a <= b) THEN(print(a))ELSE(print(b))))))]
+SymTable_5 : 
+{}
+Out : 
+[]
+Heap : 
+{}
+FileTable : 
+{}
+
+Id : 5
+ExeStack : 
+[(int b;(a=5;(b=8;(IF(a <= b) THEN(print(a))ELSE(print(b))))))]
+SymTable_5 : 
+{a=0}
+Out : 
+[]
+Heap : 
+{}
+FileTable : 
+{}
+
+Id : 5
+ExeStack : 
+[int b, (a=5;(b=8;(IF(a <= b) THEN(print(a))ELSE(print(b)))))]
+SymTable_5 : 
+{a=0}
+Out : 
+[]
+Heap : 
+{}
+FileTable : 
+{}
+
+Id : 5
+ExeStack : 
+[(a=5;(b=8;(IF(a <= b) THEN(print(a))ELSE(print(b)))))]
+SymTable_5 : 
+{a=0, b=0}
+Out : 
+[]
+Heap : 
+{}
+FileTable : 
+{}
+
+Id : 5
+ExeStack : 
+[a=5, (b=8;(IF(a <= b) THEN(print(a))ELSE(print(b))))]
+SymTable_5 : 
+{a=0, b=0}
+Out : 
+[]
+Heap : 
+{}
+FileTable : 
+{}
+
+Id : 5
+ExeStack : 
+[(b=8;(IF(a <= b) THEN(print(a))ELSE(print(b))))]
+SymTable_5 : 
+{a=5, b=0}
+Out : 
+[]
+Heap : 
+{}
+FileTable : 
+{}
+
+Id : 5
+ExeStack : 
+[b=8, (IF(a <= b) THEN(print(a))ELSE(print(b)))]
+SymTable_5 : 
+{a=5, b=0}
+Out : 
+[]
+Heap : 
+{}
+FileTable : 
+{}
+
+Id : 5
+ExeStack : 
+[(IF(a <= b) THEN(print(a))ELSE(print(b)))]
+SymTable_5 : 
+{a=5, b=8}
+Out : 
+[]
+Heap : 
+{}
+FileTable : 
+{}
+
+Id : 5
+ExeStack : 
+[print(a)]
+SymTable_5 : 
+{a=5, b=8}
+Out : 
+[]
+Heap : 
+{}
+FileTable : 
+{}
+
+Id : 5
+ExeStack : 
+[]
+SymTable_5 : 
+{a=5, b=8}
+Out : 
+[5]
+Heap : 
+{}
+FileTable : 
+{}
+

@@ -1,0 +1,6 @@
+
+m
+java:S3776"RRefactor this method to reduce its Cognitive Complexity from 20 to the 15 allowed.(œä’Ÿøÿÿÿÿ
+A
+java:S1659"&Declare "operand2" on a separate line.(âÆ‰ßÿÿÿÿÿ
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ôÏ¦¬

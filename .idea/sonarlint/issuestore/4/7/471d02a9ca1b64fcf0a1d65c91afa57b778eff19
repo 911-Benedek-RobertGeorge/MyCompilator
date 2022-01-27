@@ -1,0 +1,12 @@
+
+J
+java:S3740"/Provide the parametrized type for this generic.(¼©ëÁûÿÿÿÿ
+e
+java:S6201("HReplace this instanceof check and cast with 'instanceof RefType reftype'(ì‰Îà8«ËÁÎÔ/
+W
+java:S4973"<Strings and Boxed types should be compared using "equals()".(¾§ß»ùÿÿÿÿ
+R
+java:S4973""<Strings and Boxed types should be compared using "equals()".(ÿóÆ
+W
+java:S4973%"<Strings and Boxed types should be compared using "equals()".(Ê•¹àùÿÿÿÿ
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(È’¨øÿÿÿÿ

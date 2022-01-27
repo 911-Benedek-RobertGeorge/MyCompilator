@@ -1,0 +1,12 @@
+
+Z	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(ÊÔ­M
+b	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(÷İÏ¿8ÓúãŸÙ/
+\
+java:S1128"ARemove this unused import 'Model.Exceptions.ContainersException'.(Ğ÷ÿØúÿÿÿÿ
+_
+java:S1128"DRemove this unused import 'Model.Exceptions.EmptyExeStackException'.(˜÷ıÂûÿÿÿÿ
+V
+java:S1128"@Remove this unused import 'Model.Exceptions.ExecutionException'.(¾õ˜§
+[
+java:S1128"ERemove this unused import 'Model.Exceptions.ExpressionEvalException'.(·„„
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(È’¨øÿÿÿÿ

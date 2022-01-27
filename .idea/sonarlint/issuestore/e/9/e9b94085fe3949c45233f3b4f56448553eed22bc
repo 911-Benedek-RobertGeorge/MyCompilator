@@ -1,0 +1,9 @@
+
+m
+java:S1206	"PThis class overrides "equals()" and should therefore also override "hashCode()".(¬‰¼¯8ž°Ê¢Ñ/
+c
+java:S1126
+"AReplace this if-then-else statement by a single return statement.(ðÍæ¼úÿÿÿÿ8¡°Ê¢Ñ/
+N
+java:S1128"1Remove this unused import 'Model.Value.IntValue'.(¨½æš8Ìæ®ÛÑ/
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(é·úžÿÿÿÿÿ

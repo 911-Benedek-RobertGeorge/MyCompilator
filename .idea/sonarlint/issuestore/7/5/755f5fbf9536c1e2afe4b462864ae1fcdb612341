@@ -1,0 +1,33 @@
+
+Q
+java:S3740/"/Provide the parametrized type for this generic.(¹¢æªÿÿÿÿÿ8ÜÁ×®ã/
+Q
+java:S37400"/Provide the parametrized type for this generic.(ŒÑèëùÿÿÿÿ8ÜÁ×®ã/
+L
+java:S37401"/Provide the parametrized type for this generic.(Î‘ß½8İÁ×®ã/
+B
+java:S1481%",Remove this unused "myInput" local variable.(ãÏÔ
+V
+java:S1075)"ARefactor your code to get this URI from a customizable parameter.(Ú¹í
+Q	java:S125'"<This block of commented-out lines of code should be removed.(Õ¯´¾
+I
+java:S1135É"2Complete the task associated to this TODO comment.(¿Ëİ¹
+N
+java:S1135Ş"2Complete the task associated to this TODO comment.(˜Ï›˜şÿÿÿÿ
+P
+java:S1128"3Remove this unused import 'java.io.BufferedReader'.(€é²Å8‹Âú®ã/
+F
+java:S1128")Remove this unused import 'java.sql.Ref'.(Ë­¤8‹Âú®ã/
+M
+java:S1128"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ8‹Âú®ã/
+h
+java:S1128 "FRemove this unused import 'java.util.concurrent.atomic.AtomicInteger'.(¿êäœøÿÿÿÿ8‹Âú®ã/
+b
+java:S1192["GDefine a constant instead of duplicating this literal "number" 5 times.(…Ë‹¦øÿÿÿÿ
+l	java:S117”"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ŒÂâöÿÿÿÿÿ
+l	java:S117µ"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÿ€›‡ıÿÿÿÿ
+l	java:S117¶"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(å…µ¢ùÿÿÿÿ
+g	java:S117¹"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(²€
+_
+java:S4973ã"<Strings and Boxed types should be compared using "equals()".(àÛÿ€úÿÿÿÿ8øäô®ã/
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ìºéÚ
