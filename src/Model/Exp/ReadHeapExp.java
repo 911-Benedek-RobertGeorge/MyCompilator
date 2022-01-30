@@ -19,7 +19,7 @@ public class ReadHeapExp implements Exp{
     @Override
     public IValue eval(MyIDictionary<String, IValue> tbl, MyIHeap<Integer, IValue> heap) throws Exception {
         IValue expIValue = expresion.eval(tbl,heap);
-        System.out.println(expIValue.getType());
+       // System.out.println(expIValue.getType());
         if (expIValue.getType() instanceof RefType) {
             RefIValue valueReferenced = (RefIValue) expIValue;
             int address = valueReferenced.getAddr();

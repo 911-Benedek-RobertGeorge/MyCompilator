@@ -5,15 +5,13 @@ import Model.Containers.ExeStack.MyIStack;
 import Model.Containers.ExeStack.MyStack;
 import Model.Containers.OutList.MyIList;
 import Model.Containers.OutList.MyList;
+
 import Model.Containers.SymTable.MyDictionary;
 import Model.Containers.SymTable.MyIDictionary;
 import Model.Exp.*;
 import Model.ProgramState.PrgState;
 import Model.Statement.*;
-import Model.Type.BoolType;
-import Model.Type.IntType;
-import Model.Type.RefType;
-import Model.Type.StringType;
+import Model.Type.*;
 import Model.Value.BoolIValue;
 import Model.Value.IntIValue;
 import Model.Value.String;
@@ -22,10 +20,13 @@ import Repository.Repository;
 import Repository.RepositoryInterface;
 import View.RunCommand;
 import javafx.fxml.FXML;
+import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.SelectionMode;
 import javafx.scene.control.cell.TextFieldListCell;
 import javafx.util.StringConverter;
+
+
 
 public class FirstWindowController {
 
@@ -34,6 +35,22 @@ public class FirstWindowController {
 
     public ListView<RunCommand> getCommandListView(){
         return this.commandListView;
+    }
+
+    public Controller createController(IStmt exercise, java.lang.String fileName) throws Exception {
+        MyIStack<IStmt> executionStack = new MyStack<>();
+        MyIDictionary<java.lang.String, IValue> symbolTable  = new MyDictionary<>();
+        MyIDictionary<java.lang.String, Type> typeCheckTable  = new MyDictionary<>();
+        MyIList<IValue> outList  = new MyList<>();
+
+         exercise.typecheck(typeCheckTable);
+
+        PrgState state  = new PrgState(executionStack , symbolTable , outList , exercise);
+        Repository repository  = new Repository(state , fileName);
+
+        Controller controller  = new Controller(repository );
+
+        return controller;
     }
 
     @FXML
@@ -213,11 +230,71 @@ public class FirstWindowController {
                             )));
             ex11.typecheck(symTable);
 
+
+
             PrgState state11 = new PrgState(executionStack11, symbolTable11, outList11, ex11);
             Repository repository11 = new Repository(state11, "log11.txt");
             Controller controller11 = new Controller(repository11);
 
-        this.commandListView.setCellFactory(TextFieldListCell.forListView(new StringConverter<RunCommand>() {
+
+
+            ///SWITCH STATEMENT
+
+            IStmt declareA = new VarDeclStmt("a", new IntType());
+            IStmt assignA= new AssignStmt("a", new ValueExp(new IntIValue(1)));
+            IStmt declareB = new VarDeclStmt("b", new IntType());
+            IStmt assignB= new AssignStmt("b", new ValueExp(new IntIValue(2)));
+            IStmt declareC = new VarDeclStmt("c", new IntType());
+            IStmt assignC= new AssignStmt("c", new ValueExp(new IntIValue(5)));
+
+            Exp cond = new ArithExp('*',new VarExp("a"),new ValueExp(new IntIValue(10)));
+            Exp case1 = new ArithExp('*',new VarExp("b"),new VarExp("c"));
+            Exp case2 = new ValueExp(new IntIValue(10));
+            IStmt defaul = new PrintStmt(new ValueExp(new IntIValue(300)));
+            IStmt case1Stmt = new CompStmt(new PrintStmt(new VarExp("a")),new PrintStmt(new VarExp("b")));
+            IStmt case2Stmt =  new CompStmt(new PrintStmt(new ValueExp(new IntIValue(100))),new PrintStmt(new ValueExp(new IntIValue(200))));
+
+            IStmt exSwitch  = new CompStmt(declareA,new CompStmt(declareB,new CompStmt(declareC,
+                    new CompStmt(assignA,new CompStmt(assignB,new CompStmt(assignC,
+                    new CompStmt(new SwitchStmt(cond,case1,case1Stmt,case2,case2Stmt,defaul),defaul)))))));
+
+            Controller controllerSwitch = createController(exSwitch ,"logSwitch.txt");
+
+
+            ///latch table
+            IStmt declareRef = new VarDeclStmt("v1",  new RefType(new IntType()));
+            IStmt declareRefv2 = new VarDeclStmt("v2",  new RefType(new IntType()));
+            IStmt declareRefv3 = new VarDeclStmt("v3",  new RefType(new IntType()));
+            IStmt declareCnt = new VarDeclStmt("cnt", new IntType());
+            //IStmt assignA= new AssignStmt("a", new ValueExp(new IntIValue(1)));
+            IStmt heapAllocation = new HeapAllocationStmt("v1",new ValueExp(new IntIValue(2)));
+            IStmt heapAllocationv2 = new HeapAllocationStmt("v2",new ValueExp(new IntIValue(3)));
+            IStmt heapAllocationv3 = new HeapAllocationStmt("v3",new ValueExp(new IntIValue(4)));
+
+            IStmt newLatchStmt = new newLatchStmt("cnt",new ReadHeapExp(new VarExp("v2")));
+
+            IStmt forkLatch3 = new ForkStmt(new CompStmt(new WriteHeapStmt("v3",new ArithExp('*',new ReadHeapExp(new VarExp("v3")),new ValueExp(new IntIValue(10)))),
+                    new CompStmt(new PrintStmt(new ReadHeapExp(new VarExp("v3"))),new CountDown("cnt"))));
+            IStmt forkLatch2 = new ForkStmt(new CompStmt(new WriteHeapStmt("v2",new ArithExp('*',new ReadHeapExp(new VarExp("v2")),new ValueExp(new IntIValue(10)))),
+                new CompStmt(new PrintStmt(new ReadHeapExp(new VarExp("v2"))),new CompStmt(new CountDown("cnt"),forkLatch3))));
+
+            IStmt forkLatch1 = new ForkStmt(new CompStmt(new WriteHeapStmt("v1",new ArithExp('*',new ReadHeapExp(new VarExp("v1")),new ValueExp(new IntIValue(10)))),
+                new CompStmt(new PrintStmt(new ReadHeapExp(new VarExp("v1"))),new CompStmt(new CountDown("cnt"),forkLatch2))));
+
+
+
+            IStmt exLatch = new CompStmt(declareRef,new CompStmt(declareRefv2,new CompStmt(declareRefv3,
+                    new CompStmt(heapAllocation, new CompStmt(heapAllocationv2, new CompStmt(heapAllocationv3,
+                            new CompStmt(declareCnt,new CompStmt(newLatchStmt,
+                                    new CompStmt(forkLatch1,
+                                            new CompStmt(new AwaitStmt("cnt"),
+                                                    new CompStmt(new PrintStmt(new ValueExp(new IntIValue(100))),
+                                                            new CountDown("cnt"))))))))))));
+
+            Controller controllerLatch = createController(exLatch,"logLatch.txt");
+
+
+                    this.commandListView.setCellFactory(TextFieldListCell.forListView(new StringConverter<RunCommand>() {
             @Override
             public java.lang.String toString(RunCommand runExampleCommand) {
                 return runExampleCommand.toString();
@@ -241,6 +318,8 @@ public class FirstWindowController {
         this.commandListView.getItems().add(new RunCommand("9", ex9.toString(),controller9));
         this.commandListView.getItems().add(new RunCommand("10", ex10.toString(),controller10));
         this.commandListView.getItems().add(new RunCommand("11", ex11.toString(),controller11));
+        this.commandListView.getItems().add(new RunCommand("12", exSwitch.toString(),controllerSwitch));
+        this.commandListView.getItems().add(new RunCommand("13", exLatch.toString(),controllerLatch));
 
         this.commandListView.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
 

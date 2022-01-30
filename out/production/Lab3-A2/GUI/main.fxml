@@ -24,8 +24,8 @@
           </TableView>
           <ListView id="programStateId" fx:id="programStateView" layoutX="53.0" layoutY="78.0" prefHeight="182.0" prefWidth="226.0" />
           <ListView id="outTable" fx:id="outTableView" layoutX="53.0" layoutY="335.0" prefHeight="182.0" prefWidth="226.0" />
-          <ListView id="fileTable" fx:id="fileTableView" layoutX="703.0" layoutY="335.0" prefHeight="182.0" prefWidth="226.0" />
-          <ListView fx:id="executionStackView" layoutX="704.0" layoutY="78.0" prefHeight="182.0" prefWidth="226.0" />
+          <ListView id="fileTable" fx:id="fileTableView" layoutX="694.0" layoutY="202.0" prefHeight="83.0" prefWidth="226.0" />
+          <ListView fx:id="executionStackView" layoutX="704.0" layoutY="78.0" prefHeight="83.0" prefWidth="226.0" />
         <TextField fx:id="programStatesText" alignment="CENTER" editable="false" layoutX="197.0" layoutY="13.0" prefHeight="26.0" prefWidth="52.0" promptText=" " text=" " />
       <Label layoutX="98.0" layoutY="13.0" prefHeight="26.0" prefWidth="99.0" text="Program States : " />
       <Label layoutX="116.0" layoutY="53.0" prefHeight="26.0" prefWidth="99.0" text="Program State ID " />
@@ -33,7 +33,14 @@
       <Label layoutX="448.0" layoutY="53.0" prefHeight="26.0" prefWidth="99.0" text="Symbol Table" />
       <Label layoutX="458.0" layoutY="306.0" prefHeight="26.0" prefWidth="99.0" text="Heap Table" />
       <Label layoutX="130.0" layoutY="306.0" prefHeight="26.0" prefWidth="99.0" text="OutTable" />
-      <Label layoutX="789.0" layoutY="306.0" prefHeight="26.0" prefWidth="99.0" text="File Table" />
+      <Label layoutX="767.0" layoutY="180.0" prefHeight="26.0" prefWidth="99.0" text="File Table" />
       <Button fx:id="runOneStepButton" layoutX="197.0" layoutY="268.0" mnemonicParsing="false" text="Run one step" />
+      <TableView fx:id="latchTableView" layoutX="644.0" layoutY="319.0" prefHeight="200.0" prefWidth="285.0">
+        <columns>
+          <TableColumn fx:id="latchAdressColumn" prefWidth="143.199951171875" text="Index" />
+          <TableColumn fx:id="latchValueColumn" minWidth="0.0" prefWidth="142.4000244140625" text="Remaining" />
+        </columns>
+      </TableView>
+      <Label layoutX="757.0" layoutY="293.0" prefHeight="26.0" prefWidth="99.0" text="Latch Table" />
     </children>
 </AnchorPane>

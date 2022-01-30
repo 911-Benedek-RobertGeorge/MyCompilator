@@ -24,9 +24,7 @@ public class CompStmt implements IStmt{
     }
 
     public MyIDictionary<String,Type> typecheck(MyIDictionary<String, Type> typeEnv) throws Exception {
-        //MyIDictionary<String, Type> typEnv1 = first.typecheck(typeEnv);
-        //MyIDictionary<String, Type> typEnv2 = second.typecheck(typEnv1);
-        //return typEnv2;
+
         return second.typecheck(first.typecheck(typeEnv));
     }
 

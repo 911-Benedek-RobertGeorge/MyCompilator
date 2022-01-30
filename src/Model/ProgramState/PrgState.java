@@ -2,6 +2,8 @@ package Model.ProgramState;
 
 import Model.Containers.Heap.MyHeap;
 import Model.Containers.Heap.MyIHeap;
+import Model.Containers.LatchTable.MyILatchTable;
+import Model.Containers.LatchTable.MyLatchTable;
 import Model.Containers.SymTable.MyDictionary;
 import Model.Containers.SymTable.MyIDictionary;
 import Model.Containers.OutList.MyIList;
@@ -23,6 +25,7 @@ public class PrgState {
     private MyIHeap<Integer, IValue> heap;
     private static AtomicInteger id = new AtomicInteger(1);
     private int myId;
+    private MyILatchTable<Integer,Integer> latchTable;
 
 
     ///Getters and Setters
@@ -65,6 +68,7 @@ public class PrgState {
         this.out = ot;
         this.fileTable = new MyDictionary<String, BufferedReader>();
         this.heap = new MyHeap<Integer, IValue>();
+        this.latchTable = new MyLatchTable<Integer,Integer>();
         myId = id.getAndIncrement();
         stack.push(prg);
     }
@@ -75,9 +79,21 @@ public class PrgState {
         this.fileTable = fileTable;
         this.heap = heap;
         myId = id.getAndIncrement();
+        this.latchTable = new MyLatchTable<Integer,Integer>();
+
         stack.push(prg);
     }
+    public PrgState(MyIStack<IStmt> stack, MyIDictionary<String, IValue> symTable, MyIList<IValue> ot, MyIDictionary<String, BufferedReader> fileTable, MyIHeap<Integer, IValue> heap,MyILatchTable<Integer, Integer> latchTable, IStmt prg) throws Exception{
+        this.exeStack=stack;
+        this.symTable = symTable;
+        this.out = ot;
+        this.fileTable = fileTable;
+        this.heap = heap;
+        this.latchTable= latchTable;
+        myId = id.getAndIncrement();
 
+        stack.push(prg);
+    }
     @Override
     public String toString(){
         String representation ;
@@ -90,7 +106,9 @@ public class PrgState {
                          "Heap : \n" +
                                 this.getHeap().toString() + "\n" +
                          "FileTable : \n" +
-                                this.fileTable.toString();
+                                this.fileTable.toString() +
+                         "LatchTable : \n" +
+                                this.latchTable.toString();
 
         representation += "\n";
         return representation;
@@ -111,4 +129,7 @@ public class PrgState {
         return currentStatement.execute(this);
     }
 
+    public MyILatchTable<Integer, Integer> getLatchTable() {
+        return latchTable;
+    }
 }

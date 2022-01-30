@@ -3,6 +3,7 @@ package Model.Statement;
 import Model.Containers.ExeStack.MyIStack;
 import Model.Containers.ExeStack.MyStack;
 import Model.Containers.Heap.MyIHeap;
+import Model.Containers.LatchTable.MyILatchTable;
 import Model.Containers.OutList.MyIList;
 import Model.Containers.SymTable.MyIDictionary;
 import Model.ProgramState.PrgState;
@@ -24,10 +25,10 @@ public class ForkStmt implements IStmt{
         MyIList newOutput = state.getOut();
         MyIHeap newHeap = state.getHeap();
         MyIDictionary newFileTable = state.getFileTable();
+        MyILatchTable<Integer, Integer> newLatchTable=  state.getLatchTable();
 
 
-
-        PrgState newProgram = new PrgState(newStack,newSymTable,newOutput,newFileTable,newHeap,statement);
+        PrgState newProgram = new PrgState(newStack,newSymTable,newOutput,newFileTable,newHeap,newLatchTable,statement);
 
         return newProgram;
     }

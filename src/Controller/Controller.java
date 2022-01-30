@@ -80,7 +80,8 @@ public class Controller implements ControllerInterface {
             try {
                 oneStepForAllPrg(programList);
             } catch (Exception e) {
-                System.out.println(e.getStackTrace().toString());
+                e.printStackTrace();
+
             }
             programList = removeCompletedPrg(programStateQueue.getPrgList());
         }
@@ -105,8 +106,8 @@ public class Controller implements ControllerInterface {
         try {
             oneStepForAllPrg(programList);
         } catch (Exception e) {
-            System.out.println(e.getStackTrace().toString());
-        }
+            e.printStackTrace();
+         }
         programList = removeCompletedPrg(programStateQueue.getPrgList());
 
         executor.shutdownNow();

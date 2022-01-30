@@ -5,8 +5,10 @@ import Model.Containers.Heap.MyIHeap;
 import Model.Containers.OutList.MyIList;
 import Model.Containers.SymTable.MyIDictionary;
 import Model.Dto.HeapView;
+import Model.Dto.LatchView;
 import Model.Dto.SymbolView;
 import Model.Exceptions.ContainersException;
+import Model.Exp.ValueExp;
 import Model.ProgramState.PrgState;
 import Model.Statement.IStmt;
 import Model.Value.IValue;
@@ -33,6 +35,12 @@ public class MainWindowController {
     @FXML
     private TableColumn<HeapView, java.lang.String> valueHeapColumn;
 
+    @FXML
+    private TableView<LatchView> latchTableView;
+    @FXML
+    private TableColumn<LatchView, java.lang.String> latchAdressColumn;
+    @FXML
+    private TableColumn<LatchView, java.lang.String> latchValueColumn;
 
     @FXML
     private TableView<SymbolView> symbolTableView;
@@ -79,6 +87,9 @@ public class MainWindowController {
 
         this.variableNameColumn.setCellValueFactory(new PropertyValueFactory<SymbolView, java.lang.String>("variableName"));
         this.valueSymColumn.setCellValueFactory(new PropertyValueFactory<SymbolView, java.lang.String>("value"));
+
+        this.latchAdressColumn.setCellValueFactory(new PropertyValueFactory<LatchView, java.lang.String>("address"));
+        this.latchValueColumn.setCellValueFactory(new PropertyValueFactory<LatchView, java.lang.String>("value"));
 
         this.outTableView.setCellFactory(TextFieldListCell.forListView(new StringConverter<IValue>() {
             @Override
@@ -152,6 +163,8 @@ public class MainWindowController {
         this.outTableView.getItems().clear();
         this.fileTableView.getItems().clear();
 
+        this.latchTableView.getItems().clear();
+
         List<PrgState> programStates = command.getController().getProgramStateQueue().getPrgList();
 
         if(programStates.size() != 0)
@@ -168,6 +181,7 @@ public class MainWindowController {
         output.getContent().forEach((value)->this.outTableView.getItems().add(value));
         programStates.forEach((programState)->this.programStateView.getItems().add(programState));
 
+        this.curentProgram.getLatchTable().getContent().forEach((address,value) -> this.latchTableView.getItems().add(new LatchView(address, value)));
 
         this.programStatesText.setText(Integer.toString(programStates.size()));
 
