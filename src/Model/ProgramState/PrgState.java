@@ -2,6 +2,8 @@ package Model.ProgramState;
 
 import Model.Containers.Heap.MyHeap;
 import Model.Containers.Heap.MyIHeap;
+
+import Model.Containers.Semaphore.MyISemaphore;
 import Model.Containers.SymTable.MyDictionary;
 import Model.Containers.SymTable.MyIDictionary;
 import Model.Containers.OutList.MyIList;
@@ -9,9 +11,11 @@ import Model.Containers.ExeStack.MyIStack;
 import Model.Exceptions.ContainersException;
 import Model.Statement.IStmt;
 import Model.Value.IValue;
+import org.javatuples.Triplet;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.BufferedReader;
+import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class PrgState {
@@ -24,6 +28,11 @@ public class PrgState {
     private static AtomicInteger id = new AtomicInteger(1);
     private int myId;
 
+    private MyISemaphore<Integer, Triplet<Integer, List<Integer>,Integer>> semaphoreTable;
+
+    public MyISemaphore<Integer, Triplet<Integer, List<Integer>, Integer>> getSemaphoreTable() {
+        return semaphoreTable;
+    }
 
     ///Getters and Setters
     public MyIStack<IStmt> getExeStack() {
