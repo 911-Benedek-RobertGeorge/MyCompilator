@@ -23,7 +23,7 @@ public class OpenRFile implements IStmt{
     @Override
     public PrgState execute(PrgState state) throws Exception {
         MyIDictionary<String , BufferedReader> fileTable = state.getFileTable();
-        IValue IValue = expresion.eval(state.getSymTable(),state.getHeap());
+        IValue IValue = expresion.eval(state.getSymTableStack().peek(),state.getHeap());
         String fileName = (String) IValue.getVal();
 
         if(IValue.getType().equals(new StringType())) {

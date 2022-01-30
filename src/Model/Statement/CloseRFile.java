@@ -20,7 +20,7 @@ public class CloseRFile implements IStmt {
 
     @Override
     public PrgState execute(PrgState state) throws Exception {
-        MyIDictionary symTable = state.getSymTable();
+        MyIDictionary symTable = state.getSymTableStack().peek();
         MyIDictionary fileTable = state.getFileTable();
         IValue fileName = expresion.eval(symTable,state.getHeap());
         if(fileName.getType().equals(new StringType())){

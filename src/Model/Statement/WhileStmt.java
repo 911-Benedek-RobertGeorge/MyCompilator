@@ -22,7 +22,7 @@ public class WhileStmt implements IStmt{
 
     @Override
     public PrgState execute(PrgState state) throws Exception {
-        IValue condition = expresion.eval(state.getSymTable(),state.getHeap());
+        IValue condition = expresion.eval(state.getSymTableStack().peek(),state.getHeap());
         MyIStack stack = state.getExeStack();
         if(condition.getType() instanceof BoolType){
             if((boolean) condition.getVal()){

@@ -1,0 +1,372 @@
+Id : 14
+ExeStack : 
+[int v, (v=2;(int w;(w=5;(sum([v * 10, w]);(print(v);Fork((product([v, w]);Fork(sum([v, w])))))))))]
+SymTable_14 : 
+[{}]
+Out : 
+[]
+Heap : 
+{}
+FileTable : 
+{}
+
+Id : 14
+ExeStack : 
+[(v=2;(int w;(w=5;(sum([v * 10, w]);(print(v);Fork((product([v, w]);Fork(sum([v, w])))))))))]
+SymTable_14 : 
+[{v=0}]
+Out : 
+[]
+Heap : 
+{}
+FileTable : 
+{}
+
+Id : 14
+ExeStack : 
+[v=2, (int w;(w=5;(sum([v * 10, w]);(print(v);Fork((product([v, w]);Fork(sum([v, w]))))))))]
+SymTable_14 : 
+[{v=0}]
+Out : 
+[]
+Heap : 
+{}
+FileTable : 
+{}
+
+Id : 14
+ExeStack : 
+[(int w;(w=5;(sum([v * 10, w]);(print(v);Fork((product([v, w]);Fork(sum([v, w]))))))))]
+SymTable_14 : 
+[{v=2}]
+Out : 
+[]
+Heap : 
+{}
+FileTable : 
+{}
+
+Id : 14
+ExeStack : 
+[int w, (w=5;(sum([v * 10, w]);(print(v);Fork((product([v, w]);Fork(sum([v, w])))))))]
+SymTable_14 : 
+[{v=2}]
+Out : 
+[]
+Heap : 
+{}
+FileTable : 
+{}
+
+Id : 14
+ExeStack : 
+[(w=5;(sum([v * 10, w]);(print(v);Fork((product([v, w]);Fork(sum([v, w])))))))]
+SymTable_14 : 
+[{v=2, w=0}]
+Out : 
+[]
+Heap : 
+{}
+FileTable : 
+{}
+
+Id : 14
+ExeStack : 
+[w=5, (sum([v * 10, w]);(print(v);Fork((product([v, w]);Fork(sum([v, w]))))))]
+SymTable_14 : 
+[{v=2, w=0}]
+Out : 
+[]
+Heap : 
+{}
+FileTable : 
+{}
+
+Id : 14
+ExeStack : 
+[(sum([v * 10, w]);(print(v);Fork((product([v, w]);Fork(sum([v, w]))))))]
+SymTable_14 : 
+[{v=2, w=5}]
+Out : 
+[]
+Heap : 
+{}
+FileTable : 
+{}
+
+Id : 14
+ExeStack : 
+[sum([v * 10, w]), (print(v);Fork((product([v, w]);Fork(sum([v, w])))))]
+SymTable_14 : 
+[{v=2, w=5}]
+Out : 
+[]
+Heap : 
+{}
+FileTable : 
+{}
+
+Id : 14
+ExeStack : 
+[(v=a + b;print(v)), Return(), (print(v);Fork((product([v, w]);Fork(sum([v, w])))))]
+SymTable_14 : 
+[{v=2, w=5}, {a=20, b=5, v=2, w=5}]
+Out : 
+[]
+Heap : 
+{}
+FileTable : 
+{}
+
+Id : 14
+ExeStack : 
+[v=a + b, print(v), Return(), (print(v);Fork((product([v, w]);Fork(sum([v, w])))))]
+SymTable_14 : 
+[{v=2, w=5}, {a=20, b=5, v=2, w=5}]
+Out : 
+[]
+Heap : 
+{}
+FileTable : 
+{}
+
+Id : 14
+ExeStack : 
+[print(v), Return(), (print(v);Fork((product([v, w]);Fork(sum([v, w])))))]
+SymTable_14 : 
+[{v=2, w=5}, {a=20, b=5, v=25, w=5}]
+Out : 
+[]
+Heap : 
+{}
+FileTable : 
+{}
+
+Id : 14
+ExeStack : 
+[Return(), (print(v);Fork((product([v, w]);Fork(sum([v, w])))))]
+SymTable_14 : 
+[{v=2, w=5}, {a=20, b=5, v=25, w=5}]
+Out : 
+[25]
+Heap : 
+{}
+FileTable : 
+{}
+
+Id : 14
+ExeStack : 
+[(print(v);Fork((product([v, w]);Fork(sum([v, w])))))]
+SymTable_14 : 
+[{v=2, w=5}]
+Out : 
+[25]
+Heap : 
+{}
+FileTable : 
+{}
+
+Id : 14
+ExeStack : 
+[print(v), Fork((product([v, w]);Fork(sum([v, w]))))]
+SymTable_14 : 
+[{v=2, w=5}]
+Out : 
+[25]
+Heap : 
+{}
+FileTable : 
+{}
+
+Id : 14
+ExeStack : 
+[Fork((product([v, w]);Fork(sum([v, w]))))]
+SymTable_14 : 
+[{v=2, w=5}]
+Out : 
+[25, 2]
+Heap : 
+{}
+FileTable : 
+{}
+
+Id : 14
+ExeStack : 
+[]
+SymTable_14 : 
+[{v=2, w=5}]
+Out : 
+[25, 2]
+Heap : 
+{}
+FileTable : 
+{}
+
+Id : 15
+ExeStack : 
+[(product([v, w]);Fork(sum([v, w])))]
+SymTable_15 : 
+[{v=2, w=5}]
+Out : 
+[25, 2]
+Heap : 
+{}
+FileTable : 
+{}
+
+Id : 15
+ExeStack : 
+[product([v, w]), Fork(sum([v, w]))]
+SymTable_15 : 
+[{v=2, w=5}]
+Out : 
+[25, 2]
+Heap : 
+{}
+FileTable : 
+{}
+
+Id : 15
+ExeStack : 
+[(v=a * b;print(v)), Return(), Fork(sum([v, w]))]
+SymTable_15 : 
+[{v=2, w=5}, {a=2, b=5, v=2, w=5}]
+Out : 
+[25, 2]
+Heap : 
+{}
+FileTable : 
+{}
+
+Id : 15
+ExeStack : 
+[v=a * b, print(v), Return(), Fork(sum([v, w]))]
+SymTable_15 : 
+[{v=2, w=5}, {a=2, b=5, v=2, w=5}]
+Out : 
+[25, 2]
+Heap : 
+{}
+FileTable : 
+{}
+
+Id : 15
+ExeStack : 
+[print(v), Return(), Fork(sum([v, w]))]
+SymTable_15 : 
+[{v=2, w=5}, {a=2, b=5, v=10, w=5}]
+Out : 
+[25, 2]
+Heap : 
+{}
+FileTable : 
+{}
+
+Id : 15
+ExeStack : 
+[Return(), Fork(sum([v, w]))]
+SymTable_15 : 
+[{v=2, w=5}, {a=2, b=5, v=10, w=5}]
+Out : 
+[25, 2, 10]
+Heap : 
+{}
+FileTable : 
+{}
+
+Id : 15
+ExeStack : 
+[Fork(sum([v, w]))]
+SymTable_15 : 
+[{v=2, w=5}]
+Out : 
+[25, 2, 10]
+Heap : 
+{}
+FileTable : 
+{}
+
+Id : 15
+ExeStack : 
+[]
+SymTable_15 : 
+[{v=2, w=5}]
+Out : 
+[25, 2, 10]
+Heap : 
+{}
+FileTable : 
+{}
+
+Id : 16
+ExeStack : 
+[sum([v, w])]
+SymTable_16 : 
+[{v=2, w=5}]
+Out : 
+[25, 2, 10]
+Heap : 
+{}
+FileTable : 
+{}
+
+Id : 16
+ExeStack : 
+[(v=a + b;print(v)), Return()]
+SymTable_16 : 
+[{v=2, w=5}, {a=2, b=5, v=2, w=5}]
+Out : 
+[25, 2, 10]
+Heap : 
+{}
+FileTable : 
+{}
+
+Id : 16
+ExeStack : 
+[v=a + b, print(v), Return()]
+SymTable_16 : 
+[{v=2, w=5}, {a=2, b=5, v=2, w=5}]
+Out : 
+[25, 2, 10]
+Heap : 
+{}
+FileTable : 
+{}
+
+Id : 16
+ExeStack : 
+[print(v), Return()]
+SymTable_16 : 
+[{v=2, w=5}, {a=2, b=5, v=7, w=5}]
+Out : 
+[25, 2, 10]
+Heap : 
+{}
+FileTable : 
+{}
+
+Id : 16
+ExeStack : 
+[Return()]
+SymTable_16 : 
+[{v=2, w=5}, {a=2, b=5, v=7, w=5}]
+Out : 
+[25, 2, 10, 7]
+Heap : 
+{}
+FileTable : 
+{}
+
+Id : 16
+ExeStack : 
+[]
+SymTable_16 : 
+[{v=2, w=5}]
+Out : 
+[25, 2, 10, 7]
+Heap : 
+{}
+FileTable : 
+{}
+

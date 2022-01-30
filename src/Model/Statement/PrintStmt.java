@@ -20,7 +20,7 @@ public class PrintStmt implements IStmt{
     public PrgState execute(PrgState state) throws Exception {
 
         MyIList list = state.getOut();
-        IValue val = expresion.eval(state.getSymTable(),state.getHeap());
+        IValue val = expresion.eval(state.getSymTableStack().peek(),state.getHeap());
         list.add(val);
         state.setOut(list);
         return null;

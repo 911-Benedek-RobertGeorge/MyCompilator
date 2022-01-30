@@ -24,7 +24,7 @@ public class WriteHeapStmt implements IStmt {
     @Override
     public PrgState execute(PrgState state) throws Exception {
 
-        IValue variable = state.getSymTable().lookup(variableName);
+        IValue variable = state.getSymTableStack().peek().lookup(variableName);
         MyIHeap<Integer, IValue> heap = state.getHeap();
 
         if (variable != null && variable.getType() instanceof RefType) { // if its null it was not found
@@ -35,7 +35,7 @@ public class WriteHeapStmt implements IStmt {
             if (IValueOnAddress == null) {
                 throw new ExpressionEvalException("The variable " + variableName + " is not defined in heap \n");
             }
-            IValue evaluationIValue = expresion.eval(state.getSymTable(), heap);
+            IValue evaluationIValue = expresion.eval(state.getSymTableStack().peek(), heap);
             if (evaluationIValue.getType().equals(locationType) ){
                 heap.add(address, evaluationIValue);
             } else {

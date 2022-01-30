@@ -24,7 +24,7 @@ public class AssignStmt implements IStmt{
     @Override
     public PrgState execute(PrgState state) throws Exception {
         MyIStack<IStmt> stack= state.getExeStack();
-        MyIDictionary<String , IValue> symTable = state.getSymTable();
+        MyIDictionary<String , IValue> symTable = state.getSymTableStack().peek();
 
         if(symTable.isVarDef(id))
         {
@@ -41,7 +41,7 @@ public class AssignStmt implements IStmt{
         }
 
         state.setExeStack(stack);
-        state.setSymTable(symTable);
+        state.setSymTableStack(symTable);
         return null;
     }
     public MyIDictionary<String,Type> typecheck(MyIDictionary<String, Type> typeEnv) throws Exception {

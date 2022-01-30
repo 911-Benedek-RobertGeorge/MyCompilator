@@ -69,7 +69,7 @@ public class Controller implements ControllerInterface {
             programList.forEach(program -> program.getHeap().setContent(
                     safeGarbageCollector(
                             getAddrFromSymTable(
-                                    program.getSymTable().getContent().values(),
+                                    program.getSymTableStack().peek().getContent().values(),
                                     program.getHeap().getContent().values()
                             ),
                             program.getHeap().getContent()
@@ -96,7 +96,7 @@ public class Controller implements ControllerInterface {
         programList.forEach(program -> program.getHeap().setContent(
                 safeGarbageCollector(
                         getAddrFromSymTable(
-                                program.getSymTable().getContent().values(),
+                                program.getSymTableStack().peek().getContent().values(),
                                 program.getHeap().getContent().values()
                         ),
                         program.getHeap().getContent()

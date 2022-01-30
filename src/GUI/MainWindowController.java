@@ -3,14 +3,16 @@ package GUI;
 import Model.Containers.ExeStack.MyIStack;
 import Model.Containers.Heap.MyIHeap;
 import Model.Containers.OutList.MyIList;
+import Model.Containers.ProcTable.MyIProcTable;
+import Model.Containers.ProcTable.Pair;
 import Model.Containers.SymTable.MyIDictionary;
 import Model.Dto.HeapView;
+import Model.Dto.ProcView;
 import Model.Dto.SymbolView;
 import Model.Exceptions.ContainersException;
 import Model.ProgramState.PrgState;
 import Model.Statement.IStmt;
 import Model.Value.IValue;
-import Model.Value.IntIValue;
 import View.RunCommand;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
@@ -29,9 +31,16 @@ public class MainWindowController {
     @FXML
     private TableView<HeapView> heapTableView;
     @FXML
+    private TableView<ProcView> procTableView;
+    @FXML
     private TableColumn<HeapView, java.lang.String> addressColumn;
     @FXML
     private TableColumn<HeapView, java.lang.String> valueHeapColumn;
+
+    @FXML
+    private TableColumn<ProcView, java.lang.String> definitionColumn;
+    @FXML
+    private TableColumn<ProcView, String> bodyColumn;
 
 
     @FXML
@@ -74,8 +83,12 @@ public class MainWindowController {
     private void initialize( ) {
         this.programStateView.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
 
+        //heaptable Columns
         this.addressColumn.setCellValueFactory(new PropertyValueFactory<HeapView, java.lang.String>("heapAddress"));
         this.valueHeapColumn.setCellValueFactory(new PropertyValueFactory<HeapView, java.lang.String>("heapValue"));
+        ///proctable
+        this.definitionColumn.setCellValueFactory(new PropertyValueFactory<ProcView, java.lang.String>("definition"));
+        this.bodyColumn.setCellValueFactory(new PropertyValueFactory<ProcView, java.lang.String>("body"));
 
         this.variableNameColumn.setCellValueFactory(new PropertyValueFactory<SymbolView, java.lang.String>("variableName"));
         this.valueSymColumn.setCellValueFactory(new PropertyValueFactory<SymbolView, java.lang.String>("value"));
@@ -147,6 +160,7 @@ public class MainWindowController {
     private void refreshMainWindow(RunCommand command) throws ContainersException {
         this.symbolTableView.getItems().clear();
         this.heapTableView.getItems().clear();
+        this.procTableView.getItems().clear();
         this.executionStackView.getItems().clear();
         this.programStateView.getItems().clear();
         this.outTableView.getItems().clear();
@@ -160,9 +174,11 @@ public class MainWindowController {
         MyIHeap<Integer, IValue> sharedHeap = this.curentProgram.getHeap();
         MyIDictionary<java.lang.String, BufferedReader> fileTable = this.curentProgram.getFileTable();
         MyIList<IValue> output = this.curentProgram.getOut();
+        MyIProcTable procTable = this.curentProgram.getProcTable();
 
         ///update
         sharedHeap.getContent().forEach((address, value)->this.heapTableView.getItems().add(new HeapView(address, value)));
+        procTable.getContent().forEach((def, body)->this.procTableView.getItems().add(new ProcView(def + body.getFirst(), body.getSecond().toString())));
         fileTable.getContent().forEach((fileName, filePath)
                 -> this.fileTableView.getItems().add(fileName.toString()));
         output.getContent().forEach((value)->this.outTableView.getItems().add(value));
@@ -180,7 +196,7 @@ public class MainWindowController {
 
         ///get new values
         MyIStack<IStmt> executionStack = theProgram.getExeStack();
-        MyIDictionary<String, IValue> symbolTable = theProgram.getSymTable();
+        MyIDictionary<String, IValue> symbolTable = theProgram.getSymTableStack().peek();
 
         ///update
         executionStack.getReversed().forEach((statement)->this.executionStackView.getItems().add(statement));

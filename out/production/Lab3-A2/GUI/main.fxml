@@ -24,8 +24,8 @@
           </TableView>
           <ListView id="programStateId" fx:id="programStateView" layoutX="53.0" layoutY="78.0" prefHeight="182.0" prefWidth="226.0" />
           <ListView id="outTable" fx:id="outTableView" layoutX="53.0" layoutY="335.0" prefHeight="182.0" prefWidth="226.0" />
-          <ListView id="fileTable" fx:id="fileTableView" layoutX="703.0" layoutY="335.0" prefHeight="182.0" prefWidth="226.0" />
-          <ListView fx:id="executionStackView" layoutX="704.0" layoutY="78.0" prefHeight="182.0" prefWidth="226.0" />
+          <ListView id="fileTable" fx:id="fileTableView" layoutX="704.0" layoutY="235.0" prefHeight="66.0" prefWidth="226.0" />
+          <ListView fx:id="executionStackView" layoutX="704.0" layoutY="78.0" prefHeight="116.0" prefWidth="226.0" />
         <TextField fx:id="programStatesText" alignment="CENTER" editable="false" layoutX="197.0" layoutY="13.0" prefHeight="26.0" prefWidth="52.0" promptText=" " text=" " />
       <Label layoutX="98.0" layoutY="13.0" prefHeight="26.0" prefWidth="99.0" text="Program States : " />
       <Label layoutX="116.0" layoutY="53.0" prefHeight="26.0" prefWidth="99.0" text="Program State ID " />
@@ -33,7 +33,14 @@
       <Label layoutX="448.0" layoutY="53.0" prefHeight="26.0" prefWidth="99.0" text="Symbol Table" />
       <Label layoutX="458.0" layoutY="306.0" prefHeight="26.0" prefWidth="99.0" text="Heap Table" />
       <Label layoutX="130.0" layoutY="306.0" prefHeight="26.0" prefWidth="99.0" text="OutTable" />
-      <Label layoutX="789.0" layoutY="306.0" prefHeight="26.0" prefWidth="99.0" text="File Table" />
+      <Label layoutX="787.0" layoutY="212.0" prefHeight="26.0" prefWidth="99.0" text="File Table" />
       <Button fx:id="runOneStepButton" layoutX="197.0" layoutY="268.0" mnemonicParsing="false" text="Run one step" />
+      <TableView fx:id="procTableView" layoutX="633.0" layoutY="335.0" prefHeight="182.0" prefWidth="296.0">
+        <columns>
+          <TableColumn fx:id="definitionColumn" prefWidth="139.199951171875" text="Deifiniton" />
+          <TableColumn fx:id="bodyColumn" prefWidth="156.800048828125" text="Body" />
+        </columns>
+      </TableView>
+      <Label layoutX="731.0" layoutY="306.0" prefHeight="26.0" prefWidth="99.0" text="Procedure Table" />
     </children>
 </AnchorPane>

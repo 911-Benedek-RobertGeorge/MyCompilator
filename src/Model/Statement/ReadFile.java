@@ -25,7 +25,7 @@ public class ReadFile implements IStmt{
 
     @Override
     public PrgState execute(PrgState state) throws Exception {
-        MyIDictionary symTable = state.getSymTable();
+        MyIDictionary symTable = state.getSymTableStack().peek();
         IValue variable = (IValue) symTable.lookup(variableName);
 
         if(variable != null) {
@@ -60,7 +60,7 @@ public class ReadFile implements IStmt{
         }else{
             throw new FilesException("FileRead: the variable " + variable.toString() + "is not declared\n");
         }
-        state.setSymTable(symTable);
+        state.setSymTableStack(symTable);
         return null;
     }
 

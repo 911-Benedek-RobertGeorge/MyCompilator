@@ -5,15 +5,15 @@ import Model.Containers.ExeStack.MyIStack;
 import Model.Containers.ExeStack.MyStack;
 import Model.Containers.OutList.MyIList;
 import Model.Containers.OutList.MyList;
+import Model.Containers.ProcTable.MyIProcTable;
+import Model.Containers.ProcTable.MyProcTable;
+import Model.Containers.ProcTable.Pair;
 import Model.Containers.SymTable.MyDictionary;
 import Model.Containers.SymTable.MyIDictionary;
 import Model.Exp.*;
 import Model.ProgramState.PrgState;
 import Model.Statement.*;
-import Model.Type.BoolType;
-import Model.Type.IntType;
-import Model.Type.RefType;
-import Model.Type.StringType;
+import Model.Type.*;
 import Model.Value.BoolIValue;
 import Model.Value.IntIValue;
 import Model.Value.String;
@@ -27,6 +27,9 @@ import javafx.scene.control.SelectionMode;
 import javafx.scene.control.cell.TextFieldListCell;
 import javafx.util.StringConverter;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class FirstWindowController {
 
     @FXML
@@ -34,6 +37,21 @@ public class FirstWindowController {
 
     public ListView<RunCommand> getCommandListView(){
         return this.commandListView;
+    }
+
+    public Controller createController(IStmt exercise, java.lang.String fileName) throws Exception {
+        MyIStack<IStmt> executionStack = new MyStack<>();
+        MyIDictionary<java.lang.String, IValue> symbolTable  = new MyDictionary<>();
+        MyIList<IValue> outList  = new MyList<>();
+
+        //exercise.typecheck(symbolTable);
+
+        PrgState state  = new PrgState(executionStack , symbolTable , outList , exercise);
+        Repository repository  = new Repository(state , fileName);
+
+        Controller controller  = new Controller(repository );
+
+        return controller;
     }
 
     @FXML
@@ -217,6 +235,78 @@ public class FirstWindowController {
             Repository repository11 = new Repository(state11, "log11.txt");
             Controller controller11 = new Controller(repository11);
 
+
+
+
+        IStmt declareV1 = new VarDeclStmt("v1", new IntType());
+        IStmt assignV1 = new AssignStmt("v1", new ValueExp(new IntIValue(2)));
+        IStmt declareV2 = new VarDeclStmt("v2", new IntType());
+        IStmt assignV2 = new AssignStmt("v2", new ValueExp(new IntIValue(3)));
+        IStmt printStmt = new PrintStmt(new VarExp("v1"));
+        IStmt ifStmt = new IfStmt(new VarExp("v1"),
+                new PrintStmt( new MulExp(new VarExp("v1"),new VarExp("v2"))),
+                printStmt);   //if(exp,then,else)
+
+        IStmt ex12 = new CompStmt(declareV1,new CompStmt(assignV1,
+                     new CompStmt(declareV2,new CompStmt(assignV2,ifStmt))));
+
+        Controller controller12 = createController(ex12,"log12.txt");
+
+        IStmt declareV13 = new VarDeclStmt("v", new IntType());
+        IStmt assignV13 = new AssignStmt("v", new ValueExp(new IntIValue(20)));
+        IStmt waitStmt = new WaitStmt(new IntIValue(4));
+        IStmt printArith = new PrintStmt(new ArithExp('*',new VarExp("v"),new ValueExp(new IntIValue(10))));
+        //arithExp(char,exp1,exp2)
+
+        IStmt ex13 = new CompStmt(declareV13,new CompStmt( assignV13,
+                new CompStmt(waitStmt,printArith)));
+        ex13.typecheck(symTable) ;
+       Controller controller13 = createController(ex13,"log13.txt");
+
+
+
+
+       /// PROCEDURE TABLE
+
+        MyIStack<IStmt> executionStack14 = new MyStack<>();
+        MyIDictionary<java.lang.String, IValue> symbolTable14 = new MyDictionary<>();
+        MyIList<IValue> outList14 = new MyList<>();
+        MyIProcTable procTable = new MyProcTable();
+        List<java.lang.String> l1 = new ArrayList<>();
+        l1.add("a");
+        l1.add("b");
+        IStmt body1 =  new CompStmt(new AssignStmt("v",new ArithExp('+',new VarExp("a"),new VarExp("b"))),new PrintStmt(new VarExp("v")));
+        IStmt body2=  new CompStmt(new AssignStmt("v",new ArithExp('*',new VarExp("a"),new VarExp("b"))),new PrintStmt(new VarExp("v")));
+
+        procTable.add("sum", new Pair(l1,body1));
+        procTable.add("product", new Pair(l1,body2));
+
+        IStmt declareV14 = new VarDeclStmt("v", new IntType());
+        IStmt assignV14 = new AssignStmt("v", new ValueExp(new IntIValue(2)));
+        IStmt declareW= new VarDeclStmt("w", new IntType());
+        IStmt assignW = new AssignStmt("w", new ValueExp(new IntIValue(5)));
+        List<Exp> variablesSum = new ArrayList<>();
+        variablesSum.add(new ArithExp('*',new VarExp ("v"),new ValueExp(new IntIValue(10))));
+        variablesSum.add(new   VarExp ("w") );
+        IStmt callProcSum = new CallStmt("sum",variablesSum);
+        List<Exp> variablesProd = new ArrayList<>();
+        variablesProd.add(new   VarExp ("v") );
+        variablesProd.add(new   VarExp ("w") );
+        IStmt callProcProd = new CallStmt("product",variablesProd);
+        IStmt printV = new PrintStmt(new VarExp("v"));
+        IStmt forkStmt14 = new ForkStmt(new CompStmt(callProcProd,
+                new ForkStmt(new CallStmt("sum",variablesProd))));
+
+        IStmt ex14 = new CompStmt(declareV14, new CompStmt(assignV14,
+                new CompStmt(declareW,new  CompStmt(assignW,
+                       new CompStmt(callProcSum,
+                               new CompStmt(printV,
+                                       forkStmt14)) ))));
+
+        PrgState state14 = new PrgState(executionStack14, symbolTable14, outList14,procTable, ex14);
+        Repository repository14 = new Repository(state14, "log14.txt");
+        Controller controller14 = new Controller(repository14);
+
         this.commandListView.setCellFactory(TextFieldListCell.forListView(new StringConverter<RunCommand>() {
             @Override
             public java.lang.String toString(RunCommand runExampleCommand) {
@@ -241,6 +331,9 @@ public class FirstWindowController {
         this.commandListView.getItems().add(new RunCommand("9", ex9.toString(),controller9));
         this.commandListView.getItems().add(new RunCommand("10", ex10.toString(),controller10));
         this.commandListView.getItems().add(new RunCommand("11", ex11.toString(),controller11));
+        this.commandListView.getItems().add(new RunCommand("12", ex12.toString(),controller12));
+        this.commandListView.getItems().add(new RunCommand("13", ex13.toString(),controller13));
+        this.commandListView.getItems().add(new RunCommand("14", ex14.toString(),controller14));
 
         this.commandListView.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
 

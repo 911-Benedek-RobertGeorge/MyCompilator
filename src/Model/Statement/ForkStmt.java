@@ -7,6 +7,9 @@ import Model.Containers.OutList.MyIList;
 import Model.Containers.SymTable.MyIDictionary;
 import Model.ProgramState.PrgState;
 import Model.Type.Type;
+import Model.Value.IValue;
+
+import java.util.Stack;
 
 public class ForkStmt implements IStmt{
 
@@ -20,14 +23,13 @@ public class ForkStmt implements IStmt{
     public PrgState execute(PrgState state) throws Exception {
         MyIStack newStack =  new MyStack<IStmt>();
 
-        MyIDictionary newSymTable = state.getSymTable().deepCoppy();
+        Stack<MyIDictionary<String, IValue>> newSymTableStack = (Stack<MyIDictionary<String, IValue>>) state.getSymTableStack().clone();
+
         MyIList newOutput = state.getOut();
         MyIHeap newHeap = state.getHeap();
         MyIDictionary newFileTable = state.getFileTable();
 
-
-
-        PrgState newProgram = new PrgState(newStack,newSymTable,newOutput,newFileTable,newHeap,statement);
+        PrgState newProgram = new PrgState(newStack,newSymTableStack,newOutput,newFileTable,newHeap,state.getProcTable(),statement);
 
         return newProgram;
     }

@@ -21,7 +21,7 @@ public class VarDeclStmt implements IStmt{
     @Override
     public PrgState execute(PrgState state) throws MyExecutionException, ContainersException {
 
-        MyIDictionary symTable = state.getSymTable();
+        MyIDictionary symTable = state.getSymTableStack().peek();
 
 
         if (symTable.isVarDef(name))
@@ -41,7 +41,7 @@ public class VarDeclStmt implements IStmt{
                             symTable.add(name,new RefIValue(0,((RefType) type).getInner()));
         }
 
-        state.setSymTable(symTable);
+        state.setSymTableStack(symTable);
         return null;
     }
 

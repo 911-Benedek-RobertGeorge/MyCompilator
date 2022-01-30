@@ -23,9 +23,9 @@ public class HeapAllocationStmt implements IStmt{
 
     @Override
     public PrgState execute(PrgState state) throws Exception {
-        MyIDictionary symTable = state.getSymTable();
+        MyIDictionary<String,IValue> symTable = state.getSymTableStack().peek();
         MyIHeap<Integer, IValue> heap = state.getHeap();
-        IValue variable = state.getSymTable().lookup(variableName);
+        IValue variable = symTable.lookup(variableName);
 
 
         if(variable != null) {  /// returns null if not found
@@ -46,7 +46,7 @@ public class HeapAllocationStmt implements IStmt{
         }else
             throw new MyExecutionException(this.variableName +" was not found in the smTable\n");
         state.setHeap(heap);
-        state.setSymTable(symTable);
+        state.setSymTableStack(symTable);
         return null;
     }
 
